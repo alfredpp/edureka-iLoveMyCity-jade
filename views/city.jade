@@ -10,8 +10,8 @@ html
     br
     .container
       .row
-        - for (var i = 1; i <= numberOfImages; i++)
+        for i in numberOfImages
               .col-md-6
                .thumbnail
-                 img(src='/images/'+hotel+'/'+hotel+'-'+i+'.jpg')
+                 img(src='/images/'+city+'/'+city+'-'+i+'.jpg')
     include partials/jsIncludes.jade

@@ -1,27 +1,39 @@
 exports.home=function(req,res){
-  res.render('home',{title:'Mycity Hotels',
-                    headline:'Best Hotels In Bengaluru'
-                    });
-                  }
+  res.render('home',{title:'iLoveMyCity',
+  headline:'We believe that every city have something to say'
+  });
+}
 
 
-exports.hotel=function(req,res){
-    var hotelName=req.params.hotel;
-    var title,headline;
-    var imageCount=4;
+exports.city=function(req,res){
+  var cityName=req.params.city;
+  var title,heading;
+  var imageCount=[1,2,3,4];
 
-    if(hotelName==='abq'){
-       title="Absolute BBQ";
-       headline="ABQ: taste the thunder";
-    }
-    else if(hotelName==='a2b'){
-       title="A2B";
-       headline="A2B: pure veg";
-    }
-
-    res.render('hotel',{
-      title:title,
-      headline:headline,
-      hotel:hotelName,
-      numberOfImages:imageCount});
+  if(cityName==='berlin'){
+     title="Berlin";
+     heading="Berlin: Where love is in the air";
   }
+  else if(cityName==='paris'){
+     title="Paris";
+     heading="Paris: Good talkers are only found in Paris";
+  }
+  else if(cityName==='madrid'){
+     title="Madrid";
+     heading="Madrid: Buzz, Beautiful architecture and Football";
+  }
+  else if(cityName==='london'){
+     title="London";
+     heading="London: Sparkling, Still, Food, Gorgeous";
+  }
+  else if(cityName==='newyork'){
+     title="New York";
+     heading="New York: Come to New York to become someone new";
+  }
+
+  res.render('city',{
+      title:title,
+      headline:heading,
+      city:cityName,
+      numberOfImages:imageCount});
+}
